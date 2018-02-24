@@ -1,0 +1,6 @@
+{>layout/}
+
+{<main_container_content}
+	{>searchbar/}
+	{>list/}
+{/main_container_content}

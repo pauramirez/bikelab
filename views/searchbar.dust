@@ -1,0 +1,37 @@
+<!-- Search -->
+<div class="search">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Browse Recipes</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Choose category</label>
+              <select class="js-search-category form-control select2-hidden-accessible" name="category" data-placeholder="Choose Category" tabindex="-1" aria-hidden="true">
+                <option value="1">All</option>
+                <option value="2">Breakfast</option>
+                <option value="3">Lunch</option>
+              </select>
+              </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Select one or more ingredients that should be included in recipe</label>
+              <select class="js-search-ingredients form-control select2-hidden-accessible" name="brand" data-placeholder="Choose brand" tabindex="-1" aria-hidden="true">
+                <option value="potato-starch">potato starch</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <input class="form-control" placeholder="Search by Keyword" type="email">
+              <button type="submit" class="btn">Search Recipes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
