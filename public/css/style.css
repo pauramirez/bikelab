@@ -65,7 +65,7 @@ body,html {
 }
 .featured {
  margin-top:2%;
- margin-bottom:50px;
+ margin-bottom:2%;
  text-align:center
 }
 .featured h3 {
@@ -115,7 +115,7 @@ body,html {
  border-radius:6px
 }
 .list {
- margin-top:80px
+ margin-top:3%;
 }
 .list h5 {
  margin-bottom:30px;
@@ -608,6 +608,9 @@ footer .btn {
 .demo .box img {
  width:100%
 }
+.container-fluid{
+ margin-top: 1%;
+}
 .demo .box .title {
  background-color:#e13b2b;
  color:#fff;
@@ -672,7 +675,7 @@ footer .btn {
   padding:15px
  }
  .top .box {
-  margin-bottom:30px
+  margin-bottom:30px;
  }
  .top .box img {
   width:60px;
@@ -724,7 +727,7 @@ footer .btn {
   font-size:1.6rem
  }
  .top {
-  padding:40px 0
+  padding:40px 0;
  }
  .top .box {
   margin-bottom:30px

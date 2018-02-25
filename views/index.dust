@@ -1,6 +1,6 @@
 {>layout/}
 
 {<main_container_content}
-	{>top/}
 	{>featured/}
+	{>top/}
 {/main_container_content}

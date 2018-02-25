@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h5><i class="fa fa-cutlery" aria-hidden="true"></i>  All Recipes</h5>
+        <h5><i class="fa fa-wrench" aria-hidden="true"></i>  Accessory List</h5>
       </div>
       <div class="col-lg-4 col-sm-6">
         <div class="box grid recipes">
