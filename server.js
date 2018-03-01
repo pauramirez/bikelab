@@ -11,6 +11,7 @@ var path = require('path');
 
 /* Express app */
 var app = express();
+var port = process.env.PORT || 8080;
 
 mongoose.connect('mongodb://admin:asd123456@ds153198.mlab.com:53198/bikelab');
 
@@ -49,6 +50,6 @@ app.get('/accessories', (req,res)=>{
 });
 
 // Server
-app.listen (3000, ()=>{
-  console.log('App running on port 3000');
+app.listen (port, ()=>{
+  console.log('App running');
 });
