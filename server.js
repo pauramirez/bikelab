@@ -12,7 +12,7 @@ var path = require('path');
 /* Express app */
 var app = express();
 
-mongoose.connect('mongodb://localhost/bikelab');
+mongoose.connect('mongodb://admin:asd123456@ds153198.mlab.com:53198/bikelab');
 
 // Assign dust engine
 app.engine('dust', cons.dust);
