@@ -51,7 +51,13 @@ router.post("/addAccessory", function(req, res, next){
         name: req.body.name
     };
     let id = req.body.id;
-    Accessory.findById(id, )
+    Accessory.findIndex(id, function(err, doc){
+        if (err){
+            console.log("Error finding by id");
+        }
+        doc.name = req.body.name;
+        doc.save();
+    });
     var data = new Accessory(item);
     data.save();
 });

@@ -1,13 +1,26 @@
 import React, {Component} from "react";
-import "../public/stylesheets/style.css";
+import "../style.css";
 
 class App extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            accessories: []
+            accessories:[]
         };
+    }
+
+    componentDidMount(){
+        fetch("http://localhost:3001/dataAccessories")
+            .then((res) => {
+            if (res.status!=="200"){
+                console.log("Error getting data");
+            }
+            return res.json();
+        })
+            .then((json) => {
+                this.setState({accessories:json})
+            })
     }
 
     render() {
@@ -20,8 +33,8 @@ class App extends Component {
                     Wazza
                 </p>
                 {this.state.accessories.map(
-                    (list) => {
-                        list.name;
+                    (data) => {
+                        data.name;
                     }
                 )}
             </div>

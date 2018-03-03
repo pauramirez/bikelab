@@ -5,6 +5,8 @@ Made with Node + Express + React + Mongo
 
 # Running the app
 
+Follow this instructions to run the app locally
+
 ## Prerequisites
 ```
 Node JS
