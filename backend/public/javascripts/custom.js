@@ -5,7 +5,6 @@ $(document).ready(function() {
     // change to get href name
     if (pathname.length!==1){
         pathname = pathname.substring(1,pathname.length);
-        console.log(pathname);
     }
     // add active class to current item
     $('.navbar-nav li a[href="'+pathname+'"]').parent().addClass('active');
