@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import './App.css';
+import React, {Component} from "react";
+import "../public/stylesheets/style.css";
 
 class App extends Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class App extends Component {
                 </p>
                 {this.state.accessories.map(
                     (list) => {
-
+                        list.name;
                     }
                 )}
             </div>
