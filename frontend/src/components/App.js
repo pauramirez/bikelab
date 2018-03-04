@@ -11,34 +11,33 @@ class App extends Component {
     }
 
     componentDidMount(){
-        fetch("http://localhost:3001/dataAccessories")
-            .then((res) => {
+        fetch("/dataAccessories")
+        .then((res) => {
             if (res.status!=="200"){
                 console.log("Error getting data");
             }
             return res.json();
         })
-            .then((json) => {
-                this.setState({accessories:json})
-            })
+        .then((json) => {
+            this.setState({accessories:json});
+            
+        });
     }
 
     render() {
         return (
             <div className="App">
-                <header className="App-header">
-                    <h1 className="App-title">Welcome to React</h1>
-                </header>
-                <p className="App-intro">
-                    Wazza
-                </p>
-                {this.state.accessories.map(
-                    (data) => {
-                        data.name;
-                    }
-                )}
-            </div>
-        );
+            <header className="App-header">
+            <h1 className="App-title">Welcome to React</h1>
+            </header>
+            <p className="App-intro">
+            Wazza
+            </p>
+            {this.state.accessories.map(
+                (data) => <div key = {data.name}>{data.name}</div>)}
+                </div>
+
+                );
     }
 }
 

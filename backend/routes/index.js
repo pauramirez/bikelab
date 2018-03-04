@@ -31,10 +31,9 @@ var Accessory = mongoose.model("Accessory", AccesorySchema);
 
 /* GET accesories from db */
 router.get("/dataAccessories", function(req, res, next) {
-    Accessory.find().
-        then(function(doc){
+    Accessory.find().then(function(doc){
             console.log(doc);
-        res.render("search",{items:doc});
+        res.send(doc);
     })
 });
 /* POST accesory to db */
