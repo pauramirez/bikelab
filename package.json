@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Online marketplace for bike lovers",
   "scripts": {
-    "start": "node ./bin/www",
-    "heroku-postbuild": "cd frontend && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "start": "node ./routes/index.js",
+    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
   },
   "repository": {
     "type": "git",
