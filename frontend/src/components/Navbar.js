@@ -26,13 +26,13 @@ class NavBar extends Component {
                                         <NavLink exact className="nav-link" to="/">Home</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/accessories">Accessories</NavLink>
+                                        <NavLink exact className="nav-link" to="/accessories">Accessories</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/aboutUs">About us</NavLink>
+                                        <NavLink exact className="nav-link" to="/aboutUs">About us</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink className="nav-link" to="/contactUs">Contact Us</NavLink>
+                                        <NavLink exact className="nav-link" to="/contactUs">Contact Us</NavLink>
                                     </li>
                                 </ul>
                             </div>

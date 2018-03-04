@@ -1,6 +1,0 @@
-{>layout/}
-
-{<main_container_content}
-	{>featured/}
-	{>top/}
-{/main_container_content}

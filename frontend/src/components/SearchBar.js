@@ -42,8 +42,9 @@ class SearchBar extends Component {
                                 </div>
                                 <div className="col-lg-12">
                                     <div className="form-group">
-                                        <input className="form-control" placeholder="Search by Keyword" type="email"/>
+                                        <input className="form-control" placeholder="Search by Keyword" type="email"></input>
                                             <button type="submit" className="btn">Search Accessories</button>
+
                                     </div>
                                 </div>
                             </div>
