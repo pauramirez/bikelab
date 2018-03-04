@@ -23,7 +23,7 @@ class NavBar extends Component {
                             <div className="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <NavLink exact className="nav-link" to="/home">Home</NavLink>
+                                        <NavLink exact className="nav-link" to="/">Home</NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink exact className="nav-link" to="/accessories">Accessories</NavLink>
@@ -39,7 +39,7 @@ class NavBar extends Component {
                         </div>
                     </nav>
                     <hr/>
-                    <Route exact path="/home" component={Home}/>
+                    <Route exact path="/" component={Home}/>
                     <Route exact path="/accessories" component={Accessories}/>
                     <Route exact path="/aboutUs" component={AboutUs}/>
                     <Route exact path="/contactUs" component={ContactUs}/>
