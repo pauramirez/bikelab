@@ -16,7 +16,7 @@ var Schema = mongoose.Schema;
 
 
 var AccesorySchema = new Schema({
-    name:{type: String, required: true}/*,
+    name: {type: String, required: true}/*,
     category:{type: String, required: true},
     brand:{type: String, required: true},
     price:{type: Number, required: true},
@@ -28,7 +28,6 @@ var AccesorySchema = new Schema({
 var Accessory = mongoose.model("Accessory", AccesorySchema);
 
 
-
 /* GET accesories from db */
 router.get("/dataAccessories", function(req, res, next) {
     Accessory.find().then(function(doc){
@@ -37,7 +36,7 @@ router.get("/dataAccessories", function(req, res, next) {
     })
 });
 /* POST accesory to db */
-router.post("/addAccessory", function(req, res, next){
+router.post("/addAccessory", function (req, res, next) {
     let item = {
         name: req.body.name
     };
@@ -45,13 +44,13 @@ router.post("/addAccessory", function(req, res, next){
     data.save();
 });
 /* UPDATE accesory in db */
-router.post("/addAccessory", function(req, res, next){
+router.post("/addAccessory", function (req, res, next) {
     var item = {
         name: req.body.name
     };
     let id = req.body.id;
-    Accessory.findIndex(id, function(err, doc){
-        if (err){
+    Accessory.findIndex(id, function (err, doc) {
+        if (err) {
             console.log("Error finding by id");
         }
         doc.name = req.body.name;
@@ -62,15 +61,15 @@ router.post("/addAccessory", function(req, res, next){
 });
 
 /* GET home page. */
-router.get("/", function(req, res, next) {
+router.get("/", function (req, res, next) {
     res.render("index");
 });
 /* GET home page. */
-router.get("/accessories", function(req, res, next) {
+router.get("/accessories", function (req, res, next) {
     res.render("search");
 });
 /* GET home page. */
-router.get("/contact", function(req, res, next) {
+router.get("/contact", function (req, res, next) {
     res.render("contact");
 });
 
