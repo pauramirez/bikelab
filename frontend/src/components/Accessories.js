@@ -1,11 +1,8 @@
 import React, {Component} from "react";
 import "../style.css";
-import Nav from './Nav';
-import Accessories from './Accessories';
-import Foot from './Foot';
-import Copyright from "./Copyright";
+import SearchBar from './SearchBar';
 
-class App extends Component {
+class Accessories extends Component {
     constructor(props) {
         super(props);
 
@@ -31,15 +28,19 @@ class App extends Component {
     render() {
         return (
             <div>
-                <div className="container-fluid">
-                    <Nav/>
-                    <Accessories/>
-                </div>
-                <Foot/>
-                <Copyright/>
+                <SearchBar/>
+                <header className="App-header">
+                    <h1 className="App-title">Welcome to React</h1>
+                </header>
+                <p className="App-intro">
+                    Wazza
+                </p>
+                {this.state.accessories.map(
+                    (data) => <div key={data.name}>{data.name}</div>)}
             </div>
+
         );
     }
 }
 
-export default App;
+export default Accessories;
