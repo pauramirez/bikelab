@@ -19,7 +19,8 @@ class App extends Component {
             return res.json();
         })
             .then((json) => {
-                this.setState({accessories:json})
+                console.log(json);
+                this.setState({accessories:json});
             })
     }
 
@@ -34,7 +35,7 @@ class App extends Component {
                 </p>
                 {this.state.accessories.map(
                     (data) => {
-                        data.name;
+                        data.name
                     }
                 )}
             </div>
