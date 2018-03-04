@@ -3,6 +3,7 @@ var router = express.Router();
 var mongoose = require("mongoose");
 var url = "mongodb://admin:asd123456@ds153198.mlab.com:53198/bikelab";
 //var url = process.env.MONGOLAB_URI;
+const AccessoryModel = require('../models/AccessoryModel');
 
 /* Mongoose Setup */
 //Set up default mongoose connection
@@ -12,24 +13,11 @@ mongoose.Promise = global.Promise;
 //Get the default connection
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
-var Schema = mongoose.Schema;
 
-
-var AccesorySchema = new Schema({
-    name: {type: String, required: true}/*,
-    category:{type: String, required: true},
-    brand:{type: String, required: true},
-    price:{type: Number, required: true},
-    description:{type:String, required:true},
-    image:{type:String, required:true},
-    provider:{type:String, required:true}*/
-}, {collection: "accessories"});
-
-var Accessory = mongoose.model("Accessory", AccesorySchema);
 
 /* GET accesories from db */
-router.get("/dataAccessories", function(req, res, next) {
-    Accessory.find().then(function(doc){
+router.get("/dataAccessories", function (req, res, next) {
+    AccessoryModel.find().then(function (doc) {
         console.log(doc);
         res.send(doc);
     })
@@ -39,7 +27,7 @@ router.post("/addAccessory", function (req, res, next) {
     let item = {
         name: req.body.name
     };
-    let data = new Accessory(item);
+    let data = new AccessoryModel(item);
     data.save();
 });
 /* UPDATE accesory in db */
@@ -48,7 +36,7 @@ router.post("/addAccessory", function (req, res, next) {
         name: req.body.name
     };
     let id = req.body.id;
-    Accessory.findIndex(id, function (err, doc) {
+    AccessoryModel.findIndex(id, function (err, doc) {
         if (err) {
             console.log("Error finding by id");
         }
@@ -59,13 +47,13 @@ router.post("/addAccessory", function (req, res, next) {
     data.save();
 });
 
-router.get("/images/*", (req, res)=> {
+router.get("/images/*", (req, res) => {
     res.send("me amo");
 })
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 router.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname+'/frontend/build/index.html'));
+    res.sendFile(path.join(__dirname + '/frontend/build/index.html'));
 });
 
 

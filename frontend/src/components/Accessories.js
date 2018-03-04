@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "../style.css";
+
 import SearchBar from './SearchBar';
 
 class Accessories extends Component {
@@ -20,13 +20,14 @@ class Accessories extends Component {
                 return res.json();
             })
             .then((json) => {
+                console.log(json);
                 this.setState({accessories: json});
 
             });
     }
 
-    renderEntry(pName) {
-        return <Entry name={pName}/>;
+    renderEntry(pName, pBrand, pDescription, pCategory, pImage, pProvider, pPrice) {
+        return <Entry name={pName} brand={pBrand} description={pDescription} category={pCategory} image={pImage} provider={pProvider} price={pPrice}/>;
     }
 
     render() {
@@ -74,7 +75,7 @@ class Accessories extends Component {
                             </div>
 
                             {this.state.accessories.map(
-                                (data) => this.renderEntry(data.name) ) }
+                                (data) => this.renderEntry(data.name, data.brand, data.description, data.category, data.image, data.provider, data.price) ) }
 
 
                             <div className="col-lg-12 text-center">
@@ -95,14 +96,14 @@ class Entry extends React.Component {
         return (
             <div className="col-lg-4 col-sm-6" key={this.props.name}>
                 <div className="box grid recipes">
-                    <div className="by"><i className="fa fa-user" aria-hidden="true"></i> {this.props.name} </div>
+                    <div className="by"><strong>{this.props.brand} </strong> {this.props.name} </div>
                     <a href="">
-                        <img src="" alt={this.props.name + " picture"}/>
+                        <img src={this.props.image} alt={this.props.name + " picture"}/>
                     </a>
-                    <h2><a href="">Milk fruit fresh with vegetables </a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h2><a href="">{this.props.price}</a></h2>
+                    <p>{this.props.description}</p>
                     <div className="tag">
-                        <a href="">Milk</a>
+                        <a href="">{this.props.category}</a>
                     </div>
                 </div>
             </div>
