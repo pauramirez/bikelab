@@ -1,57 +1,51 @@
 import React, {Component} from "react";
 
-//var NavItem = require("./NavItem.js");
+import {NavLink} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import Accessories from './Accessories';
+import ContactUs from "./ContactUs";
+import AboutUs from "./AboutUs";
+import Home from "./Home.js";
+
 
 class NavBar extends Component {
 
     render() {
         return (
-            <div>
-
-                <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-                    <div className="container-fluid justify-content-center">
-                        <a className="navbar-brand" href="#">
-                            <i className="fa fa-bicycle" aria-hidden="true"></i>
-                            BikeLab
-                        </a>
-                        <div className="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
-                            <ul className="navbar-nav">
-                                <li className="nav-item">
-                                    <a className="nav-link" role = "button" onClick = {this.props.navToHome}>{this.genNavAction("Home")}</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" role = "button" onClick = {this.props.navToAccesories}>{this.genNavAction("Accesories")}</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" onClick = {this.props.navToAbout}>{this.genNavAction("About us")}</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" onClick={this.props.navToContact}>{this.genNavAction("Contact")}</a>
-                                </li>
-                            </ul>
+            <Router>
+                <div>
+                    <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+                        <div className="container-fluid justify-content-center">
+                            <NavLink exact className="navbar-brand" to = "/">
+                                <i className="fa fa-bicycle" aria-hidden="true"></i>
+                                BikeLab
+                            </NavLink>
+                            <div className="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                                <ul className="navbar-nav">
+                                    <li className="nav-item">
+                                        <NavLink exact className="nav-link" to="/">Home</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/accessories">Accessories</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/aboutUs">About us</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to="/contactUs">Contact Us</NavLink>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
-            </div>
+                    </nav>
+                    <hr/>
+                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/accessories" component={Accessories}/>
+                    <Route exact path="/aboutUs" component={AboutUs}/>
+                    <Route exact path="/contactUs" component={ContactUs}/>
+                </div>
+            </Router>
 
-        )
-    }
-
-    genNavAction(actionName)
-    {
-        const basicTag = (
-            <div>
-                <span className="navbar">{actionName}</span>
-            </div>
-        );
-        return (
-            <div>
-                <span className="highlight-container">
-                    <span className="highlight">
-                        {basicTag}
-                    </span>
-                </span>
-            </div>
         )
     }
 }

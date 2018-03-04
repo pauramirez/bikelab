@@ -17,16 +17,13 @@ class App extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <div className="container-fluid">
-                    <NavBar/>
-                    <Accessories/>
-                </div>
-                <Foot/>
-                <Copyright/>
+        return (<div>
+            <div className="container-fluid">
+                <NavBar/>
             </div>
-        );
+            <Foot/>
+            <Copyright/>
+        </div>);
     }
 }
 
