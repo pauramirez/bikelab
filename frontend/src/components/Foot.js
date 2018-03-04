@@ -7,31 +7,20 @@ class Foot extends Component {
             <footer>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-3 col-sm-6">
+                        <div className="col-lg-4 col-sm-6">
                             <h5>About</h5>
-                            <p>Nunc at augue gravida est fermentum vulputate. gravida est fermentum vulputate Pellentesque et ipsum in dui malesuada tempus.</p>
+                            <p>Online marketplace for bike lovers</p>
                         </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <h5>Archive</h5>
+                        <div className="col-lg-4 col-sm-6">
+                            <h5>Accessories</h5>
                             <ul>
-                                <li><a href="">June 2017</a>
+                                <li><a href="/accessories">Browse the catalog</a>
                                 </li>
-                                <li><a href="">July 2017</a>
+                                <li><a href="">Submit Accessory</a>
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-lg-3 col-sm-6">
-                            <h5>Recipes</h5>
-                            <ul>
-                                <li><a href="">Browse Recipes</a>
-                                </li>
-                                <li><a href="">Recipe Page</a>
-                                </li>
-                                <li><a href="">Submit Recipe</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="col-lg-3 col-sm-6">
+                        <div className="col-lg-4 col-sm-12">
                             <h5>Newsletter</h5>
                             <form>
                                 <div className="form-group">

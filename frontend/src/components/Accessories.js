@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "../style.css";
+
 import SearchBar from './SearchBar';
 
 class Accessories extends Component {

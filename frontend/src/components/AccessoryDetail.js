@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import "../style.css";
 
 class AccessoryDetail extends Component{
 
@@ -8,17 +7,13 @@ class AccessoryDetail extends Component{
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-12 text-center">
-                        <h1>Roast Chicken With Lemon Gravy</h1>
+                        <h1>name</h1>
                     </div>
                     <div className="col-lg-8">
 
-
-                        <img src="" alt=""/>
+                        <img src="" alt="im"/>
 
                             <p>Lorem ipsum dolor sit amet, usu eu vocibus laboramus appellantur, pro no natum ullum omittam. Mei vitae utinam complectitur eu. Te usu cibo vulputate. Id propriae adipisci pro. Legere nominati ut mel, natum libris at vix.</p>
-
-                            
-
 
 
                             <div className="nutrition-facts clearfix">
@@ -28,30 +23,7 @@ class AccessoryDetail extends Component{
                                     <p><strong>632 kcal</strong>
                                     </p>
                                 </div>
-                                <div>
-                                    <p>Carbohydrate:</p>
-                                    <p><strong>37 g</strong>
-                                    </p>
-                                </div>
-                                <div>
-                                    <p>Fat:</p>
-                                    <p><strong>92 g</strong>
-                                    </p>
-                                </div>
-                                <div>
-                                    <p>Protein:</p>
-                                    <p><strong>63 g</strong>
-                                    </p>
-                                </div>
-                                <div>
-                                    <p>Cholesterol:</p>
-                                    <p><strong>0 mg</strong>
-                                    </p>
-                                </div>
-
                             </div>
-
-
                             <div className="blog-comment">
                                 <hr/>
                                     <div className="reply">
