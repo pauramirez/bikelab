@@ -769,3 +769,9 @@ footer .btn {
         margin-bottom:10px
     }
 }
+.recipe-detail .reply .btn-submit {
+    margin-top: 10px;
+    padding: 17px;
+    color: #fff;
+    background: #e13b2b;
+}

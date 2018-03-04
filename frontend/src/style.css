@@ -60,8 +60,7 @@ body,html {
     color:#333
 }
 .navbar-light .navbar-nav .active>.nav-link,.navbar-light .navbar-nav .nav-link.active {
-    color:#e13b2b;
-    border-bottom:3px solid #e13b2b
+
 }
 .dropdown-menu {
     margin:0;
@@ -643,10 +642,10 @@ footer .btn {
         text-align:center
     }
     .navbar-light .navbar-nav .active>.nav-link,.navbar-light .navbar-nav .nav-link.active {
-        border-bottom:1px solid #e13b2b
+
     }
     .navbar-light .navbar-nav .nav-link {
-        padding:15px
+        padding:150px
     }
 }
 @media only screen and (max-width:768px) {
@@ -772,4 +771,10 @@ footer .btn {
         width:50%;
         margin-bottom:10px
     }
+}
+.recipe-detail .reply .btn-submit {
+    margin-top: 10px;
+    padding: 17px;
+    color: #fff;
+    background: #e13b2b;
 }

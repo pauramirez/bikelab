@@ -6,6 +6,8 @@ import Accessories from './Accessories';
 import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs";
 import Home from "./Home.js";
+import Submit from "./Submit.js";
+import AccessoryDetail from "./AccessoryDetail";
 
 
 class NavBar extends Component {
@@ -29,20 +31,25 @@ class NavBar extends Component {
                                         <NavLink exact className="nav-link" to="/accessories">Accessories</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <NavLink exact className="nav-link" to="/aboutUs">About us</NavLink>
+                                        <NavLink exact className="nav-link" to="/aboutUs">About</NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink exact className="nav-link" to="/contactUs">Contact Us</NavLink>
+                                    </li>
+                                    <li className="nav-item btn-submit-recipe">
+                                        <NavLink exact className="nav-link" to="/submit"><i className="fa fa-upload" aria-hidden="true"></i> Submit Accessory</NavLink>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </nav>
-                    <hr/>
+                    <br/>
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/accessories" component={Accessories}/>
                     <Route exact path="/aboutUs" component={AboutUs}/>
                     <Route exact path="/contactUs" component={ContactUs}/>
+                    <Route exact path="/submit" component={Submit}/>
+                    <Route exact path="/detail" component={AccessoryDetail}/>
                 </div>
             </Router>
 
