@@ -27,6 +27,10 @@ var AccesorySchema = new Schema({
 
 var Accessory = mongoose.model("Accessory", AccesorySchema);
 
+router.get("/", function(req, res, next){
+    //res.send("Mielda");
+    res.redirect("/home");
+});
 
 /* GET accesories from db */
 router.get("/dataAccessories", function(req, res, next) {
