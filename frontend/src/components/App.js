@@ -1,9 +1,11 @@
 import React, {Component} from "react";
 import "../style.css";
-import Nav from './Nav';
+
+import NavBar from "./Navbar.js"
 import Accessories from './Accessories';
 import Foot from './Foot';
 import Copyright from "./Copyright";
+
 
 class App extends Component {
     constructor(props) {
@@ -18,7 +20,7 @@ class App extends Component {
         return (
             <div>
                 <div className="container-fluid">
-                    <Nav/>
+                    <NavBar/>
                     <Accessories/>
                 </div>
                 <Foot/>
