@@ -27,14 +27,10 @@ var AccesorySchema = new Schema({
 
 var Accessory = mongoose.model("Accessory", AccesorySchema);
 
-router.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname+'/frontend/build/index.html'));
-});
-
 /* GET accesories from db */
 router.get("/dataAccessories", function(req, res, next) {
     Accessory.find().then(function(doc){
-            console.log(doc);
+        console.log(doc);
         res.send(doc);
     })
 });
@@ -62,5 +58,15 @@ router.post("/addAccessory", function (req, res, next) {
     var data = new Accessory(item);
     data.save();
 });
+
+router.get("/images/*", (req, res)=> {
+    res.send("me amo");
+})
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+router.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/frontend/build/index.html'));
+});
+
 
 module.exports = router;
