@@ -18,9 +18,9 @@ class NavBar extends Component {
                 <div>
                     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
                         <div className="container-fluid justify-content-center">
-                            <NavLink exact className="navbar-brand" to = "/home">
+                            <NavLink exact className="navbar-brand" to = "/">
                                 <i className="fa fa-bicycle" aria-hidden="true"></i>
-                                BikeLab
+                                Bike Lab
                             </NavLink>
                             <div className="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                                 <ul className="navbar-nav">
