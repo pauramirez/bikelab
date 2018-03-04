@@ -17,7 +17,7 @@ class SearchBar extends Component {
                                 <div className="col-lg-4">
                                     <div className="form-group">
                                         <label>Choose category</label>
-                                        <select className="js-search-category form-control select2-hidden-accessible" name="category" data-placeholder="Choose Category" tabindex="-1" aria-hidden="true">
+                                        <select className="js-search-category form-control select2-hidden-accessible" name="category" data-placeholder="Choose Category" aria-hidden="true">
                                             <option value="1">All</option>
                                             <option value="2">Breakfast</option>
                                             <option value="3">Lunch</option>
@@ -28,7 +28,7 @@ class SearchBar extends Component {
                                 <div className="col-lg-8">
                                     <div className="form-group">
                                         <label>Select one or more of your favorite brands</label>
-                                        <select className="js-search-ingredients form-control select2-hidden-accessible" name="ingredients[]" multiple="" data-placeholder="Included Brands" tabindex="-1" aria-hidden="true">
+                                        <select className="js-search-ingredients form-control select2-hidden-accessible" name="ingredients[]" multiple="" data-placeholder="Included Brands"  aria-hidden="true">
                                             <option value="sugar">sugar</option>
                                             <option value="wheat-flour">wheat flour</option>
                                             <option value="baking-powder">baking powder</option>

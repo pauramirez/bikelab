@@ -1,10 +1,6 @@
 import React, {Component} from "react";
 
 class Foot extends Component {
-    constructor(props) {
-        super(props);
-
-    }
 
     render() {
         return (
@@ -18,24 +14,20 @@ class Foot extends Component {
                         <div className="col-lg-3 col-sm-6">
                             <h5>Archive</h5>
                             <ul>
-                                <li><a href="#">June 2017</a>
+                                <li><a href="">June 2017</a>
                                 </li>
-                                <li><a href="#">July 2017</a>
-                                </li>
-                                <li><a href="#">August 2017</a>
-                                </li>
-                                <li><a href="#">September 2017</a>
+                                <li><a href="">July 2017</a>
                                 </li>
                             </ul>
                         </div>
                         <div className="col-lg-3 col-sm-6">
                             <h5>Recipes</h5>
                             <ul>
-                                <li><a href="#">Browse Recipes</a>
+                                <li><a href="">Browse Recipes</a>
                                 </li>
-                                <li><a href="#">Recipe Page</a>
+                                <li><a href="">Recipe Page</a>
                                 </li>
-                                <li><a href="#">Submit Recipe</a>
+                                <li><a href="">Submit Recipe</a>
                                 </li>
                             </ul>
                         </div>
@@ -45,7 +37,7 @@ class Foot extends Component {
                                 <div className="form-group">
                                     <input className="form-control" type="text"></input>
                                 </div>
-                                <button type="submit" className="btn">Subscribe</button>
+                                <button type="submit submit-btn" className="btn">Subscribe</button>
                             </form>
                         </div>
                     </div>

@@ -32,6 +32,10 @@ body,html {
     position:absolute;
     right:30px
 }
+.submit-btn{
+    padding:0;
+    width:100%;
+}
 .navbar .navbar-nav .btn-submit-recipe a {
     margin-top:13px;
     padding:10px;
