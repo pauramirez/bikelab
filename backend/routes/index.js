@@ -60,17 +60,4 @@ router.post("/addAccessory", function (req, res, next) {
     data.save();
 });
 
-/* GET home page. */
-router.get("/", function (req, res, next) {
-    res.render("index");
-});
-/* GET home page. */
-router.get("/accessories", function (req, res, next) {
-    res.render("search");
-});
-/* GET home page. */
-router.get("/contact", function (req, res, next) {
-    res.render("contact");
-});
-
 module.exports = router;

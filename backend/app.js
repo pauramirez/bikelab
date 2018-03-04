@@ -24,20 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-/* Enable CORS while developing */
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
 
-app.get('/', function(req, res, next) {
-    // Handle the get for this route
-});
-
-app.post('/', function(req, res, next) {
-    // Handle the post for this route
-});
 
 app.use("/", index);
 
