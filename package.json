@@ -4,7 +4,7 @@
   "description": "Online marketplace for bike lovers",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node backend/bin/www"
   },
   "repository": {
     "type": "git",
