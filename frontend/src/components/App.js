@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import "../style.css";
+import NavBar from "./Navbar.js"
 
 class App extends Component {
     constructor(props) {
@@ -26,6 +27,7 @@ class App extends Component {
 
     render() {
         return (
+            <div>
             <div className="App">
             <header className="App-header">
             <h1 className="App-title">Welcome to React</h1>
@@ -36,7 +38,8 @@ class App extends Component {
             {this.state.accessories.map(
                 (data) => <div key = {data.name}>{data.name}</div>)}
                 </div>
-
+                <NavBar name = "Navbar"/>
+                </div>
                 );
     }
 }
