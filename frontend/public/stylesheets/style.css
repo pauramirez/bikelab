@@ -106,7 +106,8 @@ figure{
     color:#919191
 }
 .top .box {
-    padding:25px
+    padding-top:4vmax;
+    min-height: 17vmax;
 }
 .top .box h3 {
     font-size:1.2rem;
@@ -168,8 +169,8 @@ figure{
     color:#333
 }
 .box.grid.recipes img {
-    width:100%;
-    margin-bottom:30px;
+    width: 35vmax;
+    margin-bottom: auto;
     margin-left: auto;
 }
 .box.grid.recipes .tag a {
@@ -393,6 +394,10 @@ figure{
 .recipe-detail img {
     width:100%
 }
+.header-text{
+    font-weight: 100;
+    color:white;
+}
 .recipe-detail .tag a {
     font-size:.9rem;
     display:inline-block;
@@ -565,7 +570,7 @@ figure{
 }
 .header {
     height: 100%;
-    background-image: url("../images/bk.png");
+    background-image: url("../bk.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -576,10 +581,14 @@ figure{
 }
 
 .row-centered{
-    padding-top: 15vmax;
+    width:100%;
+    padding: 10vmax;
+}
+.header-text{
+    margin-left: auto;
 }
 .main-photo{
-    max-width: 40%;
+    max-width: 60%;
 }
 @media all and (max-width: 1000px)
 {
@@ -831,6 +840,7 @@ footer .btn {
         padding:15px
     }
     .top .box {
+        height: 250px;
         margin-bottom:30px;
     }
     .top .box img {

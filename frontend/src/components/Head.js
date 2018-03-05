@@ -45,31 +45,35 @@ class Head extends Component {
 
     render() {
         return (
-            <div className="container-head">
+            <div className="container-head header">
 
                 <div className="header-overlay">
 
-                    <div className="row-centered">
-                        <div className="col-md-8 col-xs-12">
+                    <div className="row">
+                        <div className=" col-md-12 header-text">
+                            <div className="row row-centered">
+                                <div className="col-md-8 col-xs-12">
 
-                            <div className="header-text">
+                                    <div className="header-text">
 
-                                <h1>BikeLab</h1>
+                                        <h1>BikeLab</h1>
+                                        <h4 className="head-text">Online marketplace for bike enthusiasts</h4>
+                                    </div>
+
+                                </div>
+
+                                <div className="col-md-4 col-xs-12">
+
+                                    <div className="header-photo text-center">
+
+                                        <img className="main-photo" src="bike.png" alt="Main page image"/>
+
+                                    </div>
+
+                                </div>
 
                             </div>
-
                         </div>
-
-                        <div className="col-md-4 col-xs-12">
-
-                            <div className="header-photo text-center">
-
-                                <img className="main-photo" src="bike.png" alt="Main page image"/>
-
-                            </div>
-
-                        </div>
-
                     </div>
 
                 </div>

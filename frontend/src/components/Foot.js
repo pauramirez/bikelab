@@ -16,7 +16,7 @@ class Foot extends Component {
                             <ul>
                                 <li><a href="/accessories">Browse the catalog</a>
                                 </li>
-                                <li><a href="">Submit Accessory</a>
+                                <li><a href="/submit">Submit Accessory</a>
                                 </li>
                             </ul>
                         </div>
