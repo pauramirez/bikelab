@@ -53,7 +53,7 @@ class Login extends Component {
                 sessionStorage.setItem("userData", postData);
                 this.setState({redirectToReferrer: true});
                 //sessionStorage.setItem("display", "false");
-                const send= <NavBar display = "false"/>;
+                this.props.display = "false";
             },0);
 
         }
