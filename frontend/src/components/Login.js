@@ -4,6 +4,8 @@ import GoogleLogin from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import {PostData} from "../Services/PostData.js";
 import {Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import Home from "./Home";
 
 class Login extends Component {
 
@@ -11,7 +13,7 @@ class Login extends Component {
         super(props);
         this.state = {
             redirectToReferrer: false,
-            loginError:false
+            loginError: false
         }
         this.signup = this.signup.bind(this);
     }
@@ -27,7 +29,7 @@ class Login extends Component {
                 email: res.email,
                 provider_id: res.id,
                 token: res.accessToken,
-                provider_pic: res.provider_pic
+                provider_pic: res.picture.data.url
             };
         }
         if (type === "google" && res.W3.U3) {
@@ -43,30 +45,29 @@ class Login extends Component {
         if (postData) {
             PostData("signup", postData).then((result) => {
                     let responseJson = result;
-                    if (responseJson.userData) {
-                        sessionStorage.setItem("userData", JSON.stringify(responseJson));
-                        this.setState({redirectToReferrer: true});
-                    }
+
+                    sessionStorage.setItem("userData", JSON.stringify(responseJson));
+                    this.setState({redirectToReferrer: true});
+
                 }
             );
         }
-        else{}
     }
 
     render() {
 
-        if (this.state.redirectToReferrer || sessionStorage.getItem('userData')) {
+        if (this.state.redirectToReferrer || sessionStorage.getItem("userData")) {
             return (
                 <Redirect to={"/home"}/>
             );
         }
         const responseGoogle = (response) => {
             console.log(response);
-            this.signup(response, "facebook");
+            this.signup(response, "google");
         }
         const responseFacebook = (response) => {
             console.log(response);
-            this.signup(response, "google");
+            this.signup(response, "facebook");
         }
         return (
             <div>
@@ -76,7 +77,7 @@ class Login extends Component {
                             appId="209550596295120"
                             autoLoad={true}
                             fields="name,email,picture"
-                            callback={responseFacebook}/>,
+                            callback={responseFacebook}/>
                     </div>
                     <br/><br/>
                     <div className="btn-group">
@@ -85,10 +86,11 @@ class Login extends Component {
                             buttonText="Login"
                             onSuccess={responseGoogle}
                             onFailure={responseGoogle}
-                        />,
+                        />
                     </div>
                     <br/><br/>
                 </div>
+                <Route exact path="/home" component={Home}/>
             </div>);
     }
 }
