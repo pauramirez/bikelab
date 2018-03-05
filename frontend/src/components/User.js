@@ -16,8 +16,8 @@ class User extends Component{
         let data = JSON.parse(sessionStorage.getItem("userData"));
         console.log(data);
         if(data!==null) {
-            this.state({name: data.userData.name});
-            this.state({name: data.userData.email});
+            this.state({name: data.name});
+            this.state({name: data.email});
         }
     }
 
