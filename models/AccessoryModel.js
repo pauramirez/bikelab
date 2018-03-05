@@ -8,7 +8,7 @@ var AccessorySchema = new Schema({
     price:{type: String, required: true},
     description:{type:String, required:true},
     image:{type:String},
-    provider:{type:String, required:true}
+    provider:{type:String}
 }, {collection: "accessories"});
 
 const AccessoryModel = mongoose.model("Accessory", AccessorySchema);

@@ -25,15 +25,28 @@ router.get("/dataAccessories", function (req, res, next) {
 /* POST accesory to db */
 router.post("/addAccessory", function (req, res, next) {
     let item = {
-        name: req.body.name
+        name: req.body.name,
+        category: req.body.category,
+        image: req.body.image,
+        brand: req.body.brand,
+        price: req.body.price,
+        description: req.body.description
+
     };
+    console.log(item);
     let data = new AccessoryModel(item);
     data.save();
+    res.send(data);
 });
 /* UPDATE accesory in db */
-router.post("/addAccessory", function (req, res, next) {
+router.post("/updAccessory", function (req, res, next) {
     var item = {
-        name: req.body.name
+        name: req.body.name,
+        category: req.body.category,
+        brand: req.body.brand,
+        price: req.body.price,
+        description: req.body.description,
+
     };
     let id = req.body.id;
     AccessoryModel.findIndex(id, function (err, doc) {
