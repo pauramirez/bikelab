@@ -15,6 +15,19 @@ body,html {
     background-color:#fff;
     box-shadow:0 0 15px rgba(0,0,0,.1)
 }
+figure{
+    height:200px; /*container-width*/
+    overflow:hidden; /*hide bounds of image */
+}
+.description{
+    min-height: 69px;
+}
+.img-accessory{
+    max-width: 200px;
+    margin: auto;
+    display:block; /*remove inline-block spaces*/
+
+}
 .navbar .navbar-brand {
     font-weight:700;
     position:absolute;
@@ -129,10 +142,12 @@ body,html {
     border-radius:50px
 }
 .box.grid.recipes {
+    min-height: 18vh;
     margin-bottom:40px;
     padding-bottom:30px;
     text-align:center;
-    border:1px solid #dedede
+    border:1px solid #dedede;
+
 }
 .box.grid.recipes .by {
     padding:10px 15px;
@@ -154,7 +169,8 @@ body,html {
 }
 .box.grid.recipes img {
     width:100%;
-    margin-bottom:30px
+    margin-bottom:30px;
+    margin-left: auto;
 }
 .box.grid.recipes .tag a {
     display:inline-block;
