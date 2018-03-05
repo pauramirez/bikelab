@@ -1,6 +1,8 @@
 import React, {Component} from "react";
-
-import SearchBar from './SearchBar';
+import AccessoryDetail from './AccessoryDetail';
+import Home from "./Home.js";
+import { Link } from 'react-router-dom'
+import {Route} from "react-router-dom";
 
 class Accessories extends Component {
     constructor(props) {
@@ -20,14 +22,14 @@ class Accessories extends Component {
                 return res.json();
             })
             .then((json) => {
-                console.log(json);
                 this.setState({accessories: json});
 
             });
     }
 
-    renderEntry(pName, pBrand, pDescription, pCategory, pImage, pProvider, pPrice) {
-        return <Entry name={pName} brand={pBrand} description={pDescription} category={pCategory} image={pImage} provider={pProvider} price={pPrice}/>;
+    renderEntry(pId, pName, pBrand, pDescription, pCategory, pImage, pProvider, pPrice) {
+        return <Entry key={pId} id={pId} name={pName} brand={pBrand} description={pDescription} category={pCategory} image={pImage}
+                      provider={pProvider} price={pPrice}/>;
     }
 
     render() {
@@ -42,14 +44,15 @@ class Accessories extends Component {
                                     <div className="col-lg-4">
                                         <div className="form-group">
                                             <label>Choose category</label>
-                                            <select className="form-control js-search-category" name="category" data-placeholder="Choose Category" aria-hidden="true">
-                                                <option value="1">All categories</option>
-                                                <option value="2">Bike Locks</option>
-                                                <option value="3">Bike Pumps</option>
-                                                <option value="4">Bike Mirrors</option>
-                                                <option value="5">Bike Covers</option>
-                                                <option value="6">Bike Bells</option>
-                                                <option value="7">Lights & Reflectors</option>
+                                            <select className="form-control js-search-category" name="category"
+                                                    data-placeholder="Choose Category" aria-hidden="true">
+                                                <option value="">All categories</option>
+                                                <option value="Bike Locks">Bike Locks</option>
+                                                <option value="Bike Pumps">Bike Pumps</option>
+                                                <option value="Bike Mirrors">Bike Mirrors</option>
+                                                <option value="Bike Covers">Bike Covers</option>
+                                                <option value="Bike Bells">Bike Bells</option>
+                                                <option value="Lights & Reflectors">Lights & Reflectors</option>
                                             </select>
                                         </div>
                                     </div>
@@ -71,11 +74,11 @@ class Accessories extends Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <h5><i className="fa fa-wrench" aria-hidden="true"></i>  Accessory List</h5>
+                                <h5><i className="fa fa-wrench" aria-hidden="true"></i> Accessory List</h5>
                             </div>
 
                             {this.state.accessories.map(
-                                (data) => this.renderEntry(data.name, data.brand, data.description, data.category, data.image, data.provider, data.price) ) }
+                                (data) => this.renderEntry(data._id, data.name, data.brand, data.description, data.category, data.image, data.provider, data.price))}
 
 
                             <div className="col-lg-12 text-center">
@@ -83,10 +86,9 @@ class Accessories extends Component {
                             </div>
                         </div>
                     </div>
-                </div>    
-                    
-            </div>
+                </div>
 
+            </div>
         );
     }
 }
@@ -94,18 +96,19 @@ class Accessories extends Component {
 class Entry extends React.Component {
     render() {
         return (
-            <div className="col-lg-4 col-sm-6" key={this.props.name}>
+            <div className="col-lg-4 col-sm-6">
                 <div className="box grid recipes">
                     <div className="by"><strong>{this.props.brand} </strong> {this.props.name} </div>
-                    <a href="">
+                    <Link to={{pathname: `/accessories/${this.props.id}`, state:{accessory: this.props} }}>
                         <figure>
                             <img className="img-accessory" src={this.props.image} alt={this.props.name + " picture"}/>
                         </figure>
-                    </a>
-                    <h2><a href="">{this.props.price}</a></h2>
-                    <div className="description">
-                        <p>{this.props.description}</p>
-                    </div>
+                    </Link>
+                        <h2>{this.props.price}</h2>
+                        <div className="description">
+                            <p>{this.props.description}</p>
+                        </div>
+
                     <div className="tag">
                         <a href="">{this.props.category}</a>
                     </div>

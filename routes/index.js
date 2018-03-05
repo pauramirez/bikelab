@@ -16,9 +16,17 @@ var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 
-/* GET accesories from db */
+/* GET accessories from db */
 router.get("/dataAccessories", function (req, res, next) {
     AccessoryModel.find().then(function (doc) {
+        console.log(doc);
+        res.send(doc);
+    })
+});
+/* GET accessory from db */
+router.get("/dataAccessories/:id", function (req, res, next) {
+    console.log(req.params.id);
+    AccessoryModel.findById(req.params.id).then(function (doc) {
         console.log(doc);
         res.send(doc);
     })
@@ -40,7 +48,7 @@ router.post("/addAccessory", function (req, res, next) {
     res.send(data);
 });
 /* UPDATE accesory in db */
-router.post("/updAccessory", function (req, res, next) {
+router.put("/updAccessory", function (req, res, next) {
     var item = {
         name: req.body.name,
         category: req.body.category,
