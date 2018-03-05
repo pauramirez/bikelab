@@ -40,6 +40,7 @@
     "react-facebook": "^4.2.1",
     "react-facebook-login": "^4.0.1",
     "react-google-login": "^3.0.4",
+    "react-timeout": "^1.1.1",
     "serve-favicon": "^2.4.5"
   }
 }

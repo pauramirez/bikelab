@@ -45,12 +45,12 @@ class Login extends Component {
         if (postData) {
             postData = JSON.stringify(postData);
             console.log("prePostData: " + postData);
-            PostData("signup", postData).then((result)=>{
-                console.log("After post: " + result.json());
+            var result =PostData("signup", postData);
+            setTimeout(function(){
+                console.log("After post: " + result);
                 //sessionStorage.setItem("userData", JSON.stringify(responseJson));
                 this.setState({redirectToReferrer: true});
-            });
-
+            },5000);
 
         }
 }
@@ -60,7 +60,7 @@ render()
 
     if (this.state.redirectToReferrer || sessionStorage.getItem("userData")) {
         return (
-            <Redirect to={"/"}/>
+            <Redirect to={"/home"}/>
         );
     }
     const responseGoogle = (response) => {
