@@ -9,6 +9,8 @@ export function PostData(type, userData) {
         .set("/Content-Type", "application/json")
         .send(userData)
         .end(function (err, res) {
+            console.log("jojoj");
+            console.log(err.text);
             console.log(res.text);
             return res;
         });

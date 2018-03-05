@@ -43,10 +43,11 @@ class Login extends Component {
             };
         }
         if (postData) {
+            postData = JSON.stringify(postData);
             console.log("prePostData: "+ postData);
             PostData("signup", postData).then((result) => {
                     let responseJson = result;
-                    console.log(responseJson);
+                    console.log("After post:" + responseJson);
                     sessionStorage.setItem("userData", JSON.stringify(responseJson));
                     this.setState({redirectToReferrer: true});
                 }
