@@ -46,10 +46,10 @@ class Login extends Component {
         if (postData) {
             postData = JSON.stringify(postData);
             console.log("prePostData: " + postData);
-            var result =PostData("signup", postData);
-            setTimeout(function(){
-                console.log("After post: " + result);
-                //sessionStorage.setItem("userData", JSON.stringify(responseJson));
+            PostData("signup", postData);
+            setTimeout(()=>{
+                console.log("After post: " + postData);
+                sessionStorage.setItem("userData", postData);
                 this.setState({redirectToReferrer: true});
             },5000);
 
@@ -69,8 +69,11 @@ render()
         this.signup(response, "google");
     }
     const responseFacebook = (response) => {
-        console.log(response);
-        this.signup(response, "facebook");
+        setTimeout(()=>{
+            console.log(response);
+            this.signup(response, "facebook");
+        },3000);
+
     }
     return (
         <div>
