@@ -25,7 +25,6 @@ class Featured extends Component {
                 return res.json();
             })
             .then((json) => {
-                console.log(json[0]);
                 this.setState({accessory: json[0]});
             });
     }
