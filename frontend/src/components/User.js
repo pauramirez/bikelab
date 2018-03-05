@@ -8,7 +8,8 @@ class User extends Component{
         this.state = {
             redirectToReferrer:false,
             name:"",
-            email:""
+            email:"",
+            img:""
         }
     }
 
@@ -17,7 +18,8 @@ class User extends Component{
         console.log(data);
         if(data!==null) {
             this.setState({name: data.name});
-            this.setState({name: data.email});
+            this.setState({email: data.email});
+            this.setState({img: data.provider_pic});
         }
     }
 
@@ -27,10 +29,12 @@ class User extends Component{
             return(<Redirect to={"/login"}/>);
         }**/
         return(
-          <div className="row small-up-2 medium-up-3 large-up-4" id = "Body">
+          <div className="container row small-up-2 medium-up-3 large-up-4" id = "User">
               <div className="medium-12 columns">
-                  <h2>Home {this.state.name}</h2>
-                  <h2>Home {this.state.email}</h2>
+                  <h2>Bienvenido {this.state.name}</h2>
+                  <div className="container">
+                      <img src={this.state.img} alt={this.state.name}/>
+                  </div>
               </div>
           </div>
         );

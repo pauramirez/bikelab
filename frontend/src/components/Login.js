@@ -61,7 +61,7 @@ render()
 
     if (this.state.redirectToReferrer || sessionStorage.getItem("userData")) {
         return (
-            <Redirect to={"/login"}/>
+            <Redirect to={"/"}/>
         );
     }
     const responseGoogle = (response) => {
