@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Top from "./Top";
 import Featured from "./Featured";
+import User from "./User.js";
 
 class Home extends Component{
 
@@ -8,6 +9,7 @@ class Home extends Component{
         return(
             <div>
                 <Top/>
+                <User/>
                 <Featured/>
             </div>
         );

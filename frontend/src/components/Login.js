@@ -61,7 +61,7 @@ render()
 
     if (this.state.redirectToReferrer || sessionStorage.getItem("userData")) {
         return (
-            <Redirect to={"/home"}/>
+            <Redirect to={"/login"}/>
         );
     }
     const responseGoogle = (response) => {
@@ -96,7 +96,7 @@ render()
                 </div>
                 <br/><br/>
             </div>
-            <Route exact path="/home" component={Home}/>
+            <Route exact path="/" component={Home}/>
         </div>);
 }
 }
