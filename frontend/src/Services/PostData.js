@@ -1,7 +1,19 @@
-export function PostData(type, userData){
+import request from "superagent";
+
+export function PostData(type, userData) {
 
     let baseUrl = "/loginUser";
-    console.log("prepromise");
+    console.log("API: "+ userData);
+    request
+        .post(baseUrl)
+        .set("/Content-Type", "application/json")
+        .send(userData)
+        .end(function (err, res) {
+            console.log(res.text);
+            return res;
+        });
+}
+ /**   console.log("prepromise");
     return new Promise((resolve, reject )=>{
         console.log("prepost");
         fetch(baseUrl,{
@@ -18,4 +30,4 @@ export function PostData(type, userData){
                 reject(error);
             });
     });
-}
+}**/

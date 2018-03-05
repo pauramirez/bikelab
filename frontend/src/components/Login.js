@@ -43,12 +43,12 @@ class Login extends Component {
             };
         }
         if (postData) {
+            console.log("prePostData: "+ postData);
             PostData("signup", postData).then((result) => {
                     let responseJson = result;
-
+                    console.log(responseJson);
                     sessionStorage.setItem("userData", JSON.stringify(responseJson));
                     this.setState({redirectToReferrer: true});
-
                 }
             );
         }
