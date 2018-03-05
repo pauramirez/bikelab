@@ -7,6 +7,7 @@ import {Redirect} from 'react-router-dom';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Home from "./Home";
 import ReactTimeout from 'react-timeout'
+import NavBar from "./Navbar";
 
 class Login extends Component {
 
@@ -52,7 +53,7 @@ class Login extends Component {
                 sessionStorage.setItem("userData", postData);
                 this.setState({redirectToReferrer: true});
                 //sessionStorage.setItem("display", "false");
-                this.props.display = "false";
+                const send= <NavBar display = "false"/>;
             },0);
 
         }
