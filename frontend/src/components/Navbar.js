@@ -23,7 +23,7 @@ class NavBar extends Component {
 
     componentDidMount(){
         if (sessionStorage.getItem("userData")) {
-            const data = sessionStorage.getItem("display");
+            const data = this.props.display;
             console.log(data);
 
             const resp = (data)=>{
