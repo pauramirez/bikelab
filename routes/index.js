@@ -57,7 +57,7 @@ router.post("/updAccessory", function (req, res, next) {
         doc.name = req.body.name;
         doc.save();
     });
-    var data = new Accessory(item);
+    var data = new AccessoryModel(item);
     data.save();
 });
 
@@ -66,7 +66,15 @@ router.get("/images/*", (req, res) => {
 })
 
 router.post("/loginUser", (req,res) => {
-   var myData = new userModel(req.body);
+   var item = {
+       name : req.body.name,
+       provider : req.body.provider,
+       email : req.body.provider,
+       provider_id : req.body.provider_id,
+       token : req.body.token,
+       provider_pic:req.body.provider_pic
+   };
+   var myData = new userModel(item);
    myData.save()
        .then(item => {
            console.log("Saved in db");

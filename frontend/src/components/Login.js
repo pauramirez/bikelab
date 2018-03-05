@@ -10,7 +10,8 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            redirectToReferrer: false
+            redirectToReferrer: false,
+            loginError:false
         }
         this.signup = this.signup.bind(this);
     }
@@ -19,30 +20,45 @@ class Login extends Component {
 
         let postData;
 
-        if(type === "facebook" && res.email){
-            
+        if (type === "facebook" && res.email) {
+            postData = {
+                name: res.name,
+                provider: type,
+                email: res.email,
+                provider_id: res.id,
+                token: res.accessToken,
+                provider_pic: res.provider_pic
+            };
         }
-        if(type === "google" && res.W3.U3){
-
+        if (type === "google" && res.W3.U3) {
+            postData = {
+                name: res.w3.ig,
+                provider: type,
+                email: res.w3.U3,
+                provider_id: res.El,
+                token: res.Zi.access_token,
+                provider_pic: res.w3.Paa
+            };
         }
-        PostData("signup", postData).then((result) =>
-        {
-            let responseJson = result;
-            if (responseJson.userData) {
-                sessionStorage.setItem("userData", JSON.stringify(responseJson));
-                this.setState({redirectToReferrer: true});
-            }
+        if (postData) {
+            PostData("signup", postData).then((result) => {
+                    let responseJson = result;
+                    if (responseJson.userData) {
+                        sessionStorage.setItem("userData", JSON.stringify(responseJson));
+                        this.setState({redirectToReferrer: true});
+                    }
+                }
+            );
         }
-    );
-
+        else{}
     }
 
     render() {
 
-        if(this.state.redirectToReferrer){
-            return(
-                <Redirect to = {"/home"}/>
-            )
+        if (this.state.redirectToReferrer || sessionStorage.getItem('userData')) {
+            return (
+                <Redirect to={"/home"}/>
+            );
         }
         const responseGoogle = (response) => {
             console.log(response);
@@ -60,11 +76,7 @@ class Login extends Component {
                             appId="209550596295120"
                             autoLoad={true}
                             fields="name,email,picture"
-                            onClick={componentClicked}
                             callback={responseFacebook}/>,
-                        <a className='btn btn-danger disabled'><i className="fa fa-google-plus"
-                                                                  style={{width: "16px", height: "20px"}}></i></a>
-                        <a className='btn btn-danger' href='' style={{width: "12em;"}}> Sign in with Google</a>
                     </div>
                     <br/><br/>
                     <div className="btn-group">
@@ -74,9 +86,6 @@ class Login extends Component {
                             onSuccess={responseGoogle}
                             onFailure={responseGoogle}
                         />,
-                        <a className='btn btn-primary disabled'><i className="fa fa-facebook"
-                                                                   style={{width: "16px", height: "20px"}}></i></a>
-                        <a className='btn btn-primary ' href='' style={{width: "12em"}}> Sign in with Facebook</a>
                     </div>
                     <br/><br/>
                 </div>
