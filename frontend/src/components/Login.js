@@ -52,7 +52,7 @@ class Login extends Component {
                 sessionStorage.setItem("userData", postData);
                 this.setState({redirectToReferrer: true});
                 sessionStorage.setItem("display", "false");
-            },5000);
+            },0);
 
         }
 }
@@ -82,7 +82,7 @@ render()
                 <div className="btn-group">
                     <FacebookLogin
                         appId="209550596295120"
-                        autoLoad={true}
+                        autoLoad={false}
                         fields="name,email,picture"
                         callback={responseFacebook}/>
                 </div>
