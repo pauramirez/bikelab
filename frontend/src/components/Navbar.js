@@ -26,7 +26,7 @@ class NavBar extends Component {
             const data = sessionStorage.getItem("display");
             console.log(data);
 
-            const resp = function(data){
+            const resp = (data)=>{
                 if (data==="true"){
                     this.setState = ({show:true});
                 }
