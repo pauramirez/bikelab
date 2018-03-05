@@ -1,10 +1,38 @@
 import React, {Component} from 'react';
 
 class Featured extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            accessory: {
+                "name": " ",
+                "brand":" ",
+                "description":" ",
+                "image":" ",
+                "category":" "
+            }
+        };
+    }
+
+
+    componentDidMount() {
+        fetch("/dataAccessories")
+            .then((res) => {
+                if (res.status !== 200) {
+                    console.log("Error getting data");
+                }
+                return res.json();
+            })
+            .then((json) => {
+                console.log(json[0]);
+                this.setState({accessory: json[0]});
+            });
+    }
 
     render() {
         return (
-            <div className="featured">
+            <div key={this.state.accessory.name} className="featured">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-lg-12">
@@ -12,17 +40,13 @@ class Featured extends Component {
                         </div>
                         <div className="col-lg-8">
                             <div className="box grid recipes">
-                                <div className="by"><i className="fa fa-user" aria-hidden="true"></i> Gerina Amy</div>
+                                <div className="by"> {this.state.accessory.brand} </div>
                                 <a href="recipe-detail.html">
-                                    <img src="images/recipe1.jpg" alt=""/>
+                                    <img src={this.state.accessory.image} alt={this.state.accessory.name}/>
                                 </a>
-                                <h2><a href="recipe-detail.html">Roast Chicken With Lemon Gravy</a></h2>
-                                <p>Dapibus mattis a. Nec lacus nam. Volutpat molestie ipsum. Eu et fermentum malesuada
-                                    et et lorem mauris aenean partur..</p>
-                                <div className="tag">
-                                    <a href="">Chicken</a>
-                                    <a href="">Lemon</a>
-                                    <a href="">Sayur</a>
+                                <h2>{this.state.accessory.name}</h2>
+                                <p>{this.state.accessory.description}</p>
+                                <div className="tag"><a href="">{this.state.accessory.category}</a>
                                 </div>
                             </div>
                         </div>
@@ -32,5 +56,6 @@ class Featured extends Component {
         );
     }
 }
+
 
 export default Featured;

@@ -98,10 +98,14 @@ class Entry extends React.Component {
                 <div className="box grid recipes">
                     <div className="by"><strong>{this.props.brand} </strong> {this.props.name} </div>
                     <a href="">
-                        <img src={this.props.image} alt={this.props.name + " picture"}/>
+                        <figure>
+                            <img className="img-accessory" src={this.props.image} alt={this.props.name + " picture"}/>
+                        </figure>
                     </a>
                     <h2><a href="">{this.props.price}</a></h2>
-                    <p>{this.props.description}</p>
+                    <div className="description">
+                        <p>{this.props.description}</p>
+                    </div>
                     <div className="tag">
                         <a href="">{this.props.category}</a>
                     </div>
