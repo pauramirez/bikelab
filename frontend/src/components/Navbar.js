@@ -9,17 +9,42 @@ import Home from "./Home.js";
 import Submit from "./Submit.js";
 import AccessoryDetail from "./AccessoryDetail";
 import Login from "./Login.js";
+import ToggleDisplay from 'react-toggle-display';
 
 
 class NavBar extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            show: true
+        }
+    }
+
+    componentDidMount(){
+        if (!sessionStorage.getItem("userData")) {
+            const data = sessionStorage.getItem("display");
+            console.log(data);
+
+            const resp = function(data){
+                if (data==="true"){
+                    this.setState = ({show:true});
+                }
+                else if(data==="false"){
+                    this.setState = ({show:false});
+                }
+            }
+            resp(data);
+        }
+    }
     render() {
+        //var hidden = "display:" + this.state.hidden;
         return (
             <Router>
                 <div>
                     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
                         <div className="container-fluid justify-content-center">
-                            <NavLink exact className="navbar-brand" to = "/">
+                            <NavLink exact className="navbar-brand" to="/">
                                 <i className="fa fa-bicycle" aria-hidden="true"></i>
                                 Bike Lab
                             </NavLink>
@@ -37,11 +62,15 @@ class NavBar extends Component {
                                     <li className="nav-item">
                                         <NavLink exact className="nav-link" to="/contactUs">Contact Us</NavLink>
                                     </li>
-                                    <li className="nav-item">
-                                        <NavLink exact className="nav-link" to="/login"> Login/Sign Up</NavLink>
-                                    </li>
+                                    <ToggleDisplay show={this.state.show}>
+                                        <li className="nav-item">
+                                            <NavLink exact className="nav-link" to="/login"> Login/Sign Up</NavLink>
+                                        </li>
+                                    </ToggleDisplay>
                                     <li className="nav-item btn-submit-recipe">
-                                        <NavLink exact className="nav-link" to="/submit"><i className="fa fa-upload" aria-hidden="true"></i> Submit Accessory</NavLink>
+                                        <NavLink exact className="nav-link" to="/submit"><i className="fa fa-upload"
+                                                                                            aria-hidden="true"></i> Submit
+                                            Accessory</NavLink>
                                     </li>
 
                                 </ul>

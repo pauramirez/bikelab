@@ -51,6 +51,7 @@ class Login extends Component {
                 console.log("After post: " + postData);
                 sessionStorage.setItem("userData", postData);
                 this.setState({redirectToReferrer: true});
+                sessionStorage.setItem("display", "false");
             },5000);
 
         }
