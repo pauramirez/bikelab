@@ -11,7 +11,7 @@ class ContactUs extends Component{
                             <h1>Contact</h1>
                         </div>
                         <div className="col-lg-8 content">
-                            <form method="POST">
+                            <form >
                                 <div className="form-group">
                                     <label>Name</label>
                                     <input className="form-control" type="text"/>
