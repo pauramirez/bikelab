@@ -45,10 +45,13 @@ class Login extends Component {
         if (postData) {
             postData = JSON.stringify(postData);
             console.log("prePostData: " + postData);
-            var result = PostData("signup", postData);
-            console.log("After post: " + result);
-            //sessionStorage.setItem("userData", JSON.stringify(responseJson));
-            this.setState({redirectToReferrer: true});
+            PostData("signup", postData).then((result)=>{
+                console.log("After post: " + result.json());
+                //sessionStorage.setItem("userData", JSON.stringify(responseJson));
+                this.setState({redirectToReferrer: true});
+            });
+
+
         }
 }
 
@@ -57,7 +60,7 @@ render()
 
     if (this.state.redirectToReferrer || sessionStorage.getItem("userData")) {
         return (
-            <Redirect to={"/home"}/>
+            <Redirect to={"/"}/>
         );
     }
     const responseGoogle = (response) => {
