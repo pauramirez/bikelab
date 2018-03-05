@@ -22,7 +22,7 @@ class NavBar extends Component {
     }
 
     componentDidMount(){
-        if (!sessionStorage.getItem("userData")) {
+        if (sessionStorage.getItem("userData")) {
             const data = sessionStorage.getItem("display");
             console.log(data);
 
