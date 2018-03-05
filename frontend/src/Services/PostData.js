@@ -6,7 +6,7 @@ export function PostData(type, userData) {
     console.log("API: "+ userData);
     request
         .post(baseUrl)
-        .set("/Content-Type", "application/json")
+        .set("Content-Type", "application/json")
         .send(userData)
         .end(function (err, res) {
             console.log("jojoj");

@@ -32,7 +32,7 @@ class Login extends Component {
                 provider_pic: res.picture.data.url
             };
         }
-        if (type === "google" && res.W3.U3) {
+        if (type === "google" && res.w3.U3) {
             postData = {
                 name: res.w3.ig,
                 provider: type,
@@ -47,7 +47,7 @@ class Login extends Component {
             console.log("prePostData: "+ postData);
             PostData("signup", postData).then((result) => {
                     let responseJson = result;
-                    console.log("After post:" + responseJson);
+                    console.log("After post:"+responseJson);
                     sessionStorage.setItem("userData", JSON.stringify(responseJson));
                     this.setState({redirectToReferrer: true});
                 }
