@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Top from "./Top";
 import Featured from "./Featured";
 import Head from "./Head";
 

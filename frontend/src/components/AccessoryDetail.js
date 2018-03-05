@@ -1,7 +1,14 @@
 import React, {Component} from 'react';
 
 class AccessoryDetail extends Component{
-
+    constructor(props) {
+        super(props);
+        console.log(props)
+        this.state={
+            accessory:props.location.state.accessory
+        }
+        console.log(this.state.accessory);
+    }
 
 
     render(){
@@ -9,20 +16,20 @@ class AccessoryDetail extends Component{
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-12 text-center">
-                        <h1>name</h1>
+                        <h1>{this.state.accessory.name}</h1>
                     </div>
-                    <div className="col-lg-8">
+                    <div className="col-lg-8 ">
 
-                        <img src="" alt="im"/>
+                        <img className="img-detail" src={this.state.accessory.image} alt="im"/>
 
-                            <p>Lorem ipsum dolor sit amet, usu eu vocibus laboramus appellantur, pro no natum ullum omittam. Mei vitae utinam complectitur eu. Te usu cibo vulputate. Id propriae adipisci pro. Legere nominati ut mel, natum libris at vix.</p>
+                            <p>{this.state.accessory.description}</p>
 
 
                             <div className="nutrition-facts clearfix">
-                                <h3>More information</h3>
+                                <h3>{this.state.accessory.description}</h3>
                                 <div>
                                     <p><strong>Price:</strong></p>
-                                    <p>200.000
+                                    <p>{this.state.accessory.price}
                                     </p>
                                 </div>
                             </div>

@@ -66,7 +66,7 @@ class Head extends Component {
 
                                     <div className="header-photo text-center">
 
-                                        <img className="main-photo" src="bike.png" alt="Main page image"/>
+                                        <img className="main-photo" src="bike.png" alt="Main page logo"/>
 
                                     </div>
 
@@ -85,7 +85,7 @@ class Head extends Component {
                                 <h5><i className="fa fa-bicycle" aria-hidden="true"></i> Top New Accessory</h5>
                                 <div className="box clearfix">
                                     <a href="">
-                                        <img src={this.state.accessory1.image} alt=""/>
+                                        <img src={this.state.accessory1.image} alt={this.state.accessory1.name}/>
                                     </a>
                                     <h3><a href="">{this.state.accessory1.name}</a></h3>
                                     <p>{this.state.accessory1.description}</p>
@@ -95,7 +95,7 @@ class Head extends Component {
                                 <h5><i className="fa fa-bicycle" aria-hidden="true"></i> User's Favorite</h5>
                                 <div className="box clearfix">
                                     <a href="">
-                                        <img src={this.state.accessory2.image} alt=""/>
+                                        <img src={this.state.accessory2.image} alt={this.state.accessory2.name}/>
                                     </a>
                                     <h3><a href="">{this.state.accessory2.name}</a></h3>
                                     <p>{this.state.accessory2.description}</p>
@@ -105,7 +105,7 @@ class Head extends Component {
                                 <h5><i className="fa fa-bicycle" aria-hidden="true"></i> Top Seller</h5>
                                 <div className="box clearfix">
                                     <a href="">
-                                        <img src={this.state.accessory3.image} alt=""/>
+                                        <img src={this.state.accessory3.image} alt={this.state.accessory3.name}/>
                                     </a>
                                     <h3><a href="">{this.state.accessory3.name}</a></h3>
                                     <p>{this.state.accessory3.description}</p>

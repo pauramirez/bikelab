@@ -55,7 +55,8 @@ class NavBar extends Component {
                     <Route exact path="/contactUs" component={ContactUs}/>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/submit" component={Submit}/>
-                    <Route exact path="/detail" component={AccessoryDetail}/>
+
+                    <Route exact path="/accessories/:accessoryId" component={AccessoryDetail}/>
 
                 </div>
             </Router>
