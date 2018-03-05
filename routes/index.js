@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
+var userModel = require("../models/userModel.js");
 var url = "mongodb://admin:asd123456@ds153198.mlab.com:53198/bikelab";
 //var url = process.env.MONGOLAB_URI;
 const AccessoryModel = require('../models/AccessoryModel');
@@ -50,6 +51,18 @@ router.post("/addAccessory", function (req, res, next) {
 router.get("/images/*", (req, res) => {
     res.send("me amo");
 })
+
+router.post("/loginUser", (req,res) => {
+   var myData = new userModel(req.body);
+   myData.save()
+       .then(item => {
+           console.log("Saved in db");
+       })
+       .then(err=>{
+           console.log(err);
+           res.status(400).send("Unable to post db");
+       });
+});
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 router.get('*', (req, res) => {
