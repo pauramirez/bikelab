@@ -44,56 +44,56 @@ class Login extends Component {
         }
         if (postData) {
             postData = JSON.stringify(postData);
-            console.log("prePostData: "+ postData);
-            PostData("signup", postData).then((result) => {
-                    let responseJson = result;
-                    console.log("After post:"+responseJson);
-                    sessionStorage.setItem("userData", JSON.stringify(responseJson));
-                    this.setState({redirectToReferrer: true});
-                }
-            );
+            console.log("prePostData: " + postData);
+            var result = PostData("signup", postData);
+            console.log("After post: "+result);
+            //sessionStorage.setItem("userData", JSON.stringify(responseJson));
+            this.setState({redirectToReferrer: true});
         }
-    }
+    );
+}
+}
 
-    render() {
+render()
+{
 
-        if (this.state.redirectToReferrer || sessionStorage.getItem("userData")) {
-            return (
-                <Redirect to={"/home"}/>
-            );
-        }
-        const responseGoogle = (response) => {
-            console.log(response);
-            this.signup(response, "google");
-        }
-        const responseFacebook = (response) => {
-            console.log(response);
-            this.signup(response, "facebook");
-        }
+    if (this.state.redirectToReferrer || sessionStorage.getItem("userData")) {
         return (
-            <div>
-                <div classNameName="container" style={{textAlign: "center", padding: "1em"}}>
-                    <div className="btn-group">
-                        <FacebookLogin
-                            appId="209550596295120"
-                            autoLoad={true}
-                            fields="name,email,picture"
-                            callback={responseFacebook}/>
-                    </div>
-                    <br/><br/>
-                    <div className="btn-group">
-                        <GoogleLogin
-                            clientId="790268347843-8v1ab90153i7rn9om4rv35k36o8msuug.apps.googleusercontent.com"
-                            buttonText="Login"
-                            onSuccess={responseGoogle}
-                            onFailure={responseGoogle}
-                        />
-                    </div>
-                    <br/><br/>
-                </div>
-                <Route exact path="/home" component={Home}/>
-            </div>);
+            <Redirect to={"/home"}/>
+        );
     }
+    const responseGoogle = (response) => {
+        console.log(response);
+        this.signup(response, "google");
+    }
+    const responseFacebook = (response) => {
+        console.log(response);
+        this.signup(response, "facebook");
+    }
+    return (
+        <div>
+            <div classNameName="container" style={{textAlign: "center", padding: "1em"}}>
+                <div className="btn-group">
+                    <FacebookLogin
+                        appId="209550596295120"
+                        autoLoad={true}
+                        fields="name,email,picture"
+                        callback={responseFacebook}/>
+                </div>
+                <br/><br/>
+                <div className="btn-group">
+                    <GoogleLogin
+                        clientId="790268347843-8v1ab90153i7rn9om4rv35k36o8msuug.apps.googleusercontent.com"
+                        buttonText="Login"
+                        onSuccess={responseGoogle}
+                        onFailure={responseGoogle}
+                    />
+                </div>
+                <br/><br/>
+            </div>
+            <Route exact path="/home" component={Home}/>
+        </div>);
+}
 }
 
 export default Login;

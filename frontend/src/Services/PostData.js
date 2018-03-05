@@ -10,8 +10,6 @@ export function PostData(type, userData) {
         .send(userData)
         .end(function (err, res) {
             console.log("jojoj");
-            console.log(err.text);
-            console.log(res.text);
             return res;
         });
 }
