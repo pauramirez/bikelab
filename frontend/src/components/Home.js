@@ -8,8 +8,8 @@ class Home extends Component{
     render(){
         return(
             <div>
-                <Head/>
                 <User/>
+                <Head/>
                 <Featured/>
             </div>
         );
