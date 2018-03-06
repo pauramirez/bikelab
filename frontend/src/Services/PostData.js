@@ -12,6 +12,10 @@ export function PostData(type, userData) {
       return res;
     });
 }
+/**
+Paula Ramirez 
+Se puede implementar mongo en la base de datos
+**/
 /**   console.log("prepromise");
     return new Promise((resolve, reject )=>{
         console.log("prepost");
