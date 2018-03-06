@@ -2,9 +2,10 @@ var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 var userModel = require("../models/UserModel.js");
-//var url = "mongodb://admin:asd123456@ds153198.mlab.com:53198/bikelab";
-var url = process.env.MONGOLAB_URI;
-const AccessoryModel = require('../models/AccessoryModel');
+var url = "mongodb://admin:asd123456@ds153198.mlab.com:53198/bikelab";
+//var url = process.env.MONGOLAB_URI;
+const AccessoryModel = require("../models/AccessoryModel");
+const MailModel = require("../models/MailModel.js");
 
 /* Mongoose Setup */
 //Set up default mongoose connection
@@ -66,6 +67,17 @@ router.put("/updAccessory", function (req, res, next) {
         doc.save();
     });
     var data = new AccessoryModel(item);
+    data.save();
+});
+
+/* SendMail in db */
+router.put("/sendMail", function(req,res,next){
+    var mail = {
+        name: req.body.usName,
+        mail: req.body.usEmail,
+        comment: req.body.usComment
+    };
+    var data = new MailModel(mail);
     data.save();
 });
 
