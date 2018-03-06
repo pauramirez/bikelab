@@ -29,14 +29,12 @@ class User extends Component{
             return(<Redirect to={"/login"}/>);
         }**/
         return(
-          <div className="container row small-up-2 medium-up-3 large-up-4" id = "User">
-              <div className="medium-12 columns">
-                  <h2>Bienvenido </h2>
+          <div className="container" id = "User" style = {{textAlign:"center", padding:"1em"}}>
+                  <h2>Hola tu </h2>
                       <h3>{this.state.name}</h3>
                   <div className="container">
-                      <img src={this.state.img} alt={this.state.name} style={{"border-radius": "50%"}}/>
+                      <img src={this.state.img} alt={this.state.name} style={{"border-radius": "50%", "horizontal-align":"center"}}/>
                   </div>
-              </div>
           </div>
         );
     }
