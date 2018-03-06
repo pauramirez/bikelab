@@ -30,7 +30,7 @@ class User extends Component{
         }**/
         return(
           <div className="container" id = "User" style = {{textAlign:"center", padding:"1em"}}>
-                  <h2>Hola tu </h2>
+                  <h2>Welcome to your Lab, Bikelab!</h2>
                       <h3>{this.state.name}</h3>
                   <div className="container">
                       <img src={this.state.img} alt={this.state.name} style={{"border-radius": "50%", "horizontal-align":"center"}}/>
