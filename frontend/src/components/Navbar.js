@@ -9,6 +9,7 @@ import Home from "./Home.js";
 import Submit from "./Submit.js";
 import AccessoryDetail from "./AccessoryDetail";
 import Login from "./Login.js";
+import Logout from "./Logout.js";
 import ToggleDisplay from 'react-toggle-display';
 
 
@@ -21,23 +22,16 @@ class NavBar extends Component {
         }
     }
 
-    display(props){
-        if (sessionStorage.getItem("userData")) {
 
-            const data = props.display;
-            console.log(data);
-
-            const resp = (data)=>{
-                if (data==="true"){
-                    this.setState = ({show:true});
-                }
-                else if(data==="false"){
-                    this.setState = ({show:false});
-                }
-            }
-            resp(data);
+    componentDidMount(){
+        if (this.props.display === "true") {
+            this.setState = ({show: true});
+        }
+        else if (this.props.display === "false") {
+            this.setState = ({show: false});
         }
     }
+
     render() {
         //var hidden = "display:" + this.state.hidden;
         return (
@@ -68,6 +62,11 @@ class NavBar extends Component {
                                             <NavLink exact className="nav-link" to="/login"> Login/Sign Up</NavLink>
                                         </li>
                                     </ToggleDisplay>
+                                    <ToggleDisplay show={!this.state.show}>
+                                        <li className="nav-item">
+                                            <NavLink exact className="nav-link" to="/logout"> Logout</NavLink>
+                                        </li>
+                                    </ToggleDisplay>
                                     <li className="nav-item btn-submit-recipe">
                                         <NavLink exact className="nav-link" to="/submit"><i className="fa fa-upload"
                                                                                             aria-hidden="true"></i> Submit
@@ -85,7 +84,7 @@ class NavBar extends Component {
                     <Route exact path="/contactUs" component={ContactUs}/>
                     <Route exact path="/login" component={Login}/>
                     <Route exact path="/submit" component={Submit}/>
-
+                    <Route exact path="/logout" component={Logout}/>
                     <Route exact path="/accessories/:accessoryId" component={AccessoryDetail}/>
 
                 </div>

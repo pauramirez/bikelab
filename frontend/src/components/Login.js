@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import GoogleLogin from 'react-google-login';
-import FacebookLogin from 'react-facebook-login';
+import FacebookLogin, {GoogleLogout} from 'react-facebook-login';
 import {PostData} from "../Services/PostData.js";
 import {Redirect} from 'react-router-dom';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Home from "./Home";
 import ReactTimeout from 'react-timeout'
 import NavBar from "./Navbar";
+
 
 class Login extends Component {
 
@@ -63,9 +64,9 @@ render()
 {
 
     if (this.state.redirectToReferrer || sessionStorage.getItem("userData")) {
-        return (
-            <Redirect to={"/"}/>
-        );
+        //return (
+            //<Redirect to={"/login"}/>
+        //);
     }
     const responseGoogle = (response) => {
         console.log(response);
