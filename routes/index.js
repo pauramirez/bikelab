@@ -2,8 +2,8 @@ var express = require("express");
 var router = express.Router();
 var mongoose = require("mongoose");
 var userModel = require("../models/UserModel.js");
-var url = "mongodb://admin:asd123456@ds153198.mlab.com:53198/bikelab";
-//var url = process.env.MONGOLAB_URI;
+//var url = "mongodb://admin:asd123456@ds153198.mlab.com:53198/bikelab";
+var url = process.env.MONGOLAB_URI;
 const AccessoryModel = require('../models/AccessoryModel');
 
 /* Mongoose Setup */
