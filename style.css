@@ -748,6 +748,9 @@ footer .btn {
         width:60px;
         height:60px
     }
+    
+    /*recetas o bicicletas?*/ 
+    
     .box.list.recipes .tag,.box.list.recipes h2,.box.list.recipes p {
         padding-left:100px;
         padding-right:15px
