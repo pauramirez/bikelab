@@ -40,9 +40,9 @@ class Featured extends Component {
                         <div className="col-lg-8">
                             <div className="box grid recipes">
                                 <div className="by"> {this.state.accessory.brand} </div>
-                                <a href="recipe-detail.html">
+
                                     <img src={this.state.accessory.image} alt={this.state.accessory.name}/>
-                                </a>
+
                                 <h2>{this.state.accessory.name}</h2>
                                 <p>{this.state.accessory.description}</p>
                                 <div className="tag"><a href="">{this.state.accessory.category}</a>
